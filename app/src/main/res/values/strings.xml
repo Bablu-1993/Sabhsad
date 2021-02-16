@@ -9,7 +9,17 @@
         <item> गैलरी </item>
         <item> सहयोगी से बात करे </item>
         <item> सहयोगी </item>
-
     </string-array>
-
+    <string name="r_date">Select date</string>
+    <string name="r_name">Enter Name</string>
+    <string name="r_mobile">Enter Mobile</string>
+    <string name="r_email">Enter Email</string>
+    <string name="r_address">Enter Address</string>
+    <string name="r_mohallah">Enter Mohallah</string>
+    <string name="r_wardno">Enter Ward No</string>
+    <string name="r_aadhar">Enter Aadhaar No</string>
+    <string name="r_voterid">Enter Voterid</string>
+    <string name="r_date_of_birth">Date of Birth</string>
+    <string name="r_district">Enter District</string>
+    <string name="r_uses_type">Enter User Type</string>
 </resources>

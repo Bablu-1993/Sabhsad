@@ -12,11 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ESabhsad">
         <activity android:name=".adminActivityClass.RegisterUser"></activity>
+        <activity android:name=".adminActivityClass.AdminActivity"  android:noHistory="true"/>
         <activity android:name=".adminActivityClass.SahyogiActivity" />
-        <activity android:name=".adminActivityClass.NivaranActivity" />
+        <activity android:name=".adminActivityClass.NivaranActivity"/>
         <activity android:name=".adminActivityClass.SamsyeActivity" />
-        <activity android:name=".adminActivityClass.VerifyOTPActivity" />
-        <activity android:name=".adminActivityClass.AdminActivity">
+        <activity android:name=".adminActivityClass.VerifyOTPActivity"
+            android:noHistory="true"/>
+        <activity android:name=".adminActivityClass.SendOTPActivity"
+            android:noHistory="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

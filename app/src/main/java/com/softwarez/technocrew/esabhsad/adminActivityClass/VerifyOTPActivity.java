@@ -93,6 +93,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
                             verificationId,
                             code
                     );
+
                     FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -103,10 +104,9 @@ public class VerifyOTPActivity extends AppCompatActivity {
                                         Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
-                                       // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                         finish();
                                         editor.putString(AllConstants.KEY_Number,number);
-                                       editor.commit();
+                                         editor.commit();
                                         Log.e("verify number ",""+number);
 
                                     } else {

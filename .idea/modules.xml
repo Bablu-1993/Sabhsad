@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sabhasad.iml" filepath="$PROJECT_DIR$/.idea/modules/Sabhasad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ESabhsad.iml" filepath="$PROJECT_DIR$/.idea/modules/ESabhsad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ESabhsad.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ESabhsad.app.iml" />
     </modules>
   </component>
 </project>

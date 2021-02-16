@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,19 +19,22 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.softwarez.technocrew.esabhsad.AllConstants;
 import com.softwarez.technocrew.esabhsad.R;
+import com.softwarez.technocrew.esabhsad.prefrence.SharedPrefManager;
+
 import java.util.concurrent.TimeUnit;
 
 public class SendOTPActivity extends AppCompatActivity {
-Button buttonGetOTP;
-ProgressBar progressBar;
-SharedPreferences spf;
-SharedPreferences.Editor editor;
-FirebaseAuth auth;
-//EditText inputMobile;
-String number;
-  String inputNumber = " ";
-  TextInputLayout inputLayoutMobile ;
-  TextInputEditText inputMobile;
+    Button buttonGetOTP;
+    ProgressBar progressBar;
+    SharedPreferences spf;
+    SharedPreferences.Editor editor;
+    FirebaseAuth auth;
+    //EditText inputMobile;
+    String number;
+    String inputNumber = " ";
+    TextInputLayout inputLayoutMobile ;
+    TextInputEditText inputMobile;
+    TextView btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +42,22 @@ String number;
         setContentView(R.layout.activity_send_o_t_p);
         inputLayoutMobile=findViewById(R.id.inputLayoutMobile);
         inputMobile=findViewById(R.id.edtTxtMobile);
-       // inputMobile=findViewById(R.id.inputMobile);
-          buttonGetOTP=findViewById(R.id.btnGetOtp);
-         progressBar=findViewById(R.id.progressBar);
+        // inputMobile=findViewById(R.id.inputMobile);
+        buttonGetOTP=findViewById(R.id.btnGetOtp);
+        progressBar=findViewById(R.id.progressBar);
+        btnRegister=findViewById(R.id.btnRegister);
 
         spf=getSharedPreferences(AllConstants.SHARED_PREFERENCE, Context.MODE_PRIVATE);
         editor=spf.edit();
-        //AllProfileList();
-        Log.e("send OTP Number", ""+inputNumber);
-        //StudentLogin();
         SendOTPMobile();
-      /// AdminLogin();
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(SendOTPActivity.this,RegisterUser.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -96,9 +105,10 @@ String number;
                                 intent.putExtra("verificationId", verificationId);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
-                                editor.putString(AllConstants.KEY_Number, inputNumber);
-                                editor.putBoolean(AllConstants.IS_USER_LOGIN, true);
-                                editor.commit();
+                                //SharedPrefManager.getInstance(getApplicationContext()).userLogin(inputNumber);
+                                /// editor.putString(AllConstants.KEY_Number, inputNumber);
+                                //editor.putBoolean(AllConstants.IS_USER_LOGIN, true);
+                                //editor.commit();
 
                             }
                         }
