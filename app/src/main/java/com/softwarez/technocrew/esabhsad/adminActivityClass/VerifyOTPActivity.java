@@ -105,9 +105,9 @@ public class VerifyOTPActivity extends AppCompatActivity {
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                         finish();
-                                        editor.putString(AllConstants.KEY_Number,number);
-                                         editor.commit();
-                                        Log.e("verify number ",""+number);
+                                       // editor.putString(AllConstants.KEY_Number,number);
+                                        // editor.commit();
+                                        //Log.e("verify number ",""+number);
 
                                     } else {
                                         Toast.makeText(VerifyOTPActivity.this, "The Verification code entered was invalid ", Toast.LENGTH_SHORT).show();
